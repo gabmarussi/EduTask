@@ -1,81 +1,162 @@
-# FECAP - Fundação de Comércio Álvares Penteado
+# EduTask
+
+EduTask is a web task management platform for academic workflows, built to help teachers and advisors organize activities, deadlines, and priorities in one clean interface.
 
 <p align="center">
-<a href= "https://www.fecap.br/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhZPrRa89Kma0ZZogxm0pi-tCn_TLKeHGVxywp-LXAFGR3B1DPouAJYHgKZGV0XTEf4AE&usqp=CAU" alt="FECAP - Fundação de Comércio Álvares Penteado" border="0"></a>
+	<img width="1200" alt="EduTask interface" src="https://github.com/user-attachments/assets/3c7c931b-d029-4ddd-9196-55b25c87a1e6" />
 </p>
 
-# 🎓 EduTask
+## Table of Contents
 
-## Integrantes: <a href="https://www.linkedin.com/in/eduardo-savino-gomes-77833a10/">Arthur Rodrigues Ferreira</a>, <a href="https://www.linkedin.com/in/gabrielmarussi/">Gabriel Henrique Coelho Marussi</a>, <a href="https://www.linkedin.com/in/lucasskenichi/">Lucas Kenichi Soares Abe</a> e <a href="https://www.linkedin.com/in/pedro-dimitry-zyrianoff-2223b1268/">Pedro Dimitry Zyrianoff</a>.
+- [Overview](#overview)
+- [Academic Context](#academic-context)
+- [Key Features](#key-features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Environment Variables](#environment-variables)
+- [Database and Migrations](#database-and-migrations)
+- [Project Structure](#project-structure)
+- [License](#license)
+- [Team](#team)
+- [Repository About (Description and Topics)](#repository-about-description-and-topics)
 
-## Professora Orientadora: <a href="https://www.linkedin.com/in/lucymari/">Lucy Mari Tabuti</a>
+## Overview
 
-## Descrição
+EduTask was developed as an academic software engineering project at FECAP. The main goal is to improve time management and day-to-day planning for education professionals through a modern and intuitive task management experience.
 
-<p align="center">
- <img width="2500" height="1259" alt="Image" src="https://github.com/user-attachments/assets/3c7c931b-d029-4ddd-9196-55b25c87a1e6" />
-</p>
+## Academic Context
 
-O projeto **EduTask** é um sistema desenvolvido por nós alunos da FECAP por meio da matéria Engenharia de Software e Arquitetura de Sistemas com o objetivo de **solucionar um problema de gestão de tempo e organização** na comunidade acadêmica, desenvolvendo uma ferramenta educacional focada em produtividade. Esta aplicação foi criada para ser uma **ferramenta web** de gerenciamento de tarefas que beneficiará **professores e orientadores** ao facilitar e organizar as tarefas do dia a dia na profissão, com uma interface elegante e intuitiva (inspirada no estilo Apple Reminders).
-<br><br>
+This project was produced at FECAP (Fundacao de Comercio Alvares Penteado) as part of a Software Engineering and Systems Architecture course.
 
-## 🛠 Como Utilizar
+- Institution: FECAP
+- Course: Software Engineering and Systems Architecture
+- Academic use case: educational task management for teachers and advisors
 
-O EduTask foi projetado para ser intuitivo e acessível via navegador (web).
+## Key Features
 
-1.  **Acesso:** Basta executar o link de acesso (URL) no seu celular/computador.
-2.  **Registro:** Crie uma conta de usuário (ou faça login).
-3.  **Organização:** Comece utilizando as Listas Inteligentes (como "Hoje" ou "Prioridade") ou crie novas Listas/Projetos (ex: "Turma de TCC", "Planejamento de Aulas").
-4.  **Produtividade:** Siga utilizando o sistema, criando todas as tarefas, definindo prioridades e prazos, e acompanhando seu progresso nas visualizações em Lista, Kanban ou Calendário.
+- Email/password authentication with Supabase Auth.
+- Task CRUD (create, update, delete, complete).
+- Custom lists (create, edit, delete).
+- Smart filters for Today, Overdue, and High Priority tasks.
+- Search by task title.
+- Multiple visualizations: List view and Kanban view.
+- Responsive interface for desktop and mobile usage.
 
-## 🚀 Tecnologias Usadas
+## Tech Stack
 
-O EduTask é uma aplicação web completa (Full-Stack), utilizando tecnologias modernas para garantir performance, escalabilidade e uma excelente experiência de usuário.
+| Layer                | Technology                          |
+| :------------------- | :---------------------------------- |
+| Frontend             | React 18 + Vite + TypeScript        |
+| UI                   | Tailwind CSS + Radix UI + shadcn/ui |
+| Data Fetching        | TanStack Query                      |
+| Backend and Database | Supabase (Auth + PostgreSQL)        |
+| Tooling              | ESLint + PostCSS                    |
 
-| Categoria | Tecnologia | Objetivo |
-| :--- | :--- | :--- |
-| **Frontend**                 | **[React 18 / Vite ]**                  | Construção da Interface de Usuário (UI) limpa e responsiva.                    |
-| **Linguagem**                | **[TypeScript]**                          | Linguagem principal para o desenvolvimento do Frontend e Backend.              |
-| **Backend / Banco de Dados** | **[Supabase (Auth + Postgres)]**        | Armazenamento e manipulação persistente de tarefas, listas e dados de usuário. |
-| **Estilização**              | **[Tailwind CSS, Radix UI (Components)]** | Implementação do Design System minimalista e elegante (Estilo Apple).          |
+## Getting Started
 
-## 💻 Configuração para Desenvolvimento
+### Prerequisites
 
-Para rodar e contribuir com o desenvolvimento do EduTask:
+- Node.js LTS
+- npm
+- A Supabase project
 
-### Pré-requisitos
-
-- **Node.js (LTS)**: Necessário para executar o ambiente JavaScript.
-- **npm** (ou yarn): Gerenciador de pacotes.
-- **Supbase**: Necessário para criação de banco de dados e backend.
-
-### Passos de Execução
-
-1. **Instalar dependências**
+### Installation
 
 ```bash
 npm install
 ```
 
-2. **Criar um arquivo `.env` com as variáveis abaixo:**
-
-```
-VITE_SUPABASE_URL=https://<your-project>.supabase.co
-VITE_SUPABASE_PUBLISHABLE_KEY=<anon-or-publishable-key>
-```
-
-3. **Rodar em modo desenvolvimento**
+### Run in development
 
 ```bash
 npm run dev
 ```
 
-4. **Build para produção**
+### Production build
 
 ```bash
 npm run build
 ```
 
-Notas:
+### Preview production build
 
-- As migrations estão em `supabase/migrations/`. Aplique-as via Supabase SQL Editor ou `supabase` CLI para criar as tabelas `profiles`, `lists` e `tasks` e as policies associadas.
+```bash
+npm run preview
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+## Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+VITE_SUPABASE_URL=https://<your-project>.supabase.co
+VITE_SUPABASE_PUBLISHABLE_KEY=<anon-or-publishable-key>
+```
+
+## Database and Migrations
+
+SQL migrations are located in `supabase/migrations/`.
+
+Apply them using either:
+
+- Supabase SQL Editor, or
+- Supabase CLI
+
+The schema includes core entities such as user profiles, task lists, and tasks.
+
+## Project Structure
+
+```text
+src/
+	components/        # UI and feature components (task cards, dialogs, sidebar, views)
+	hooks/             # Custom hooks (auth, responsiveness, toast)
+	integrations/      # External services (Supabase client and generated types)
+	lib/               # Shared helpers and utilities
+	pages/             # Route-level pages (Auth, Index, Settings, NotFound)
+	types/             # Domain types (tasks and lists)
+supabase/
+	migrations/        # Database migration scripts
+```
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
+## Team
+
+Developed by:
+
+- [Arthur Rodrigues Ferreira](https://www.linkedin.com/in/eduardo-savino-gomes-77833a10/)
+- [Gabriel Henrique Coelho Marussi](https://www.linkedin.com/in/gabrielmarussi/)
+- [Lucas Kenichi Soares Abe](https://www.linkedin.com/in/lucasskenichi/)
+- [Pedro Dimitry Zyrianoff](https://www.linkedin.com/in/pedro-dimitry-zyrianoff-2223b1268/)
+
+Academic advisor:
+
+- [Lucy Mari Tabuti](https://www.linkedin.com/in/lucymari/)
+
+Institution:
+
+- [FECAP - Fundacao de Comercio Alvares Penteado](https://www.fecap.br/)
+
+## Repository About (Description and Topics)
+
+Use the following in your GitHub repository "About" section.
+
+Description:
+
+```text
+EduTask is a task management web app for academic workflows, built with React, TypeScript, and Supabase to help teachers and advisors organize tasks, priorities, and deadlines.
+```
+
+Suggested topics:
+
+```text
+react, typescript, vite, supabase, postgresql, tailwindcss, shadcn-ui, task-manager, kanban, productivity, education, academic-project
+```
